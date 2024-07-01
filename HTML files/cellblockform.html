@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Block Form - Prison Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            flex: 0 0 calc(50% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7"></path></svg>');
+            background-repeat: no-repeat;
+            background-position-x: calc(100% - 10px);
+            background-position-y: 50%;
+            padding-right: 30px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group.full-width {
+            flex: 0 0 100%;
+        }
+
+        .user-login {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h1>Prison Management System</h1>
+        </div>
+        <div class="user-login">
+            <div class="dropdown">
+                <div class="user-avatar">
+                    <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="User Avatar"> <!-- Add your avatar image path -->
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">My Account</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form action="cellblockconnect.php" method="post">
+        <div class="form-group">
+            <label for="block-name">Block Name:</label>
+            <input type="text" id="block-name" name="block-name" placeholder="Enter block name...">
+        </div>
+        <div class="form-group">
+            <label for="capacity">Capacity:</label>
+            <input type="text" id="capacity" name="capacity" placeholder="Enter capacity...">
+        </div>
+        <div class="form-group">
+            <label for="security-level">Security Level:</label>
+            <select id="security-level" name="security-level">
+                <option value="">Select security level...</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="floor">Floor:</label>
+            <input type="number" id="floor" name="floor" placeholder="Enter floor...">
+        </div>
+        <div class="form-group">
+            <label for="building">Building:</label>
+            <input type="text" id="building" name="building" placeholder="Enter building...">
+        </div>
+        <div class="form-group full-width">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Enter description..."></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Add Cell Block</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
